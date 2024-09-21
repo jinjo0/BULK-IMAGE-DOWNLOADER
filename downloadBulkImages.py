@@ -6,7 +6,10 @@ from tqdm import tqdm
 filename = 'images.txt'
 
 # Create a directory for downloaded images
-os.makedirs('downloaded_images', exist_ok=True)
+timestamped_dir = datetime.now().strftime('di_%Y%m%d_%H%M%S')
+
+os.makedirs(timestamped_dir, exist_ok=True)
+
 
 # Read the file and get all URLs
 with open(filename, 'r') as file:
